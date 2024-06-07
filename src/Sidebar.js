@@ -1,5 +1,5 @@
-import React from 'react'; // Assuming you're using React Router for navigation
-import './Sidebar.css'; // Ensure you have some basic styles defined
+import React from 'react';
+import './Sidebar.css';
 import sidebarImage from './assets/kaizen patient.JPG';
 
 function Sidebar() {

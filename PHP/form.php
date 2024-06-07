@@ -7,7 +7,6 @@ header('Access-Control-Allow-Origin: http://localhost:3000');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 
-// Connect to your database
 $host = '127.0.0.1';
 $dbname = 'kaizen_temp_data';
 $username = 'kaizen_user';
@@ -35,16 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->beginTransaction();
         foreach ($data['responses'] as $questionId => $answer) {
             if (strpos($questionId, '-other') !== false) {
-                continue;  // Skip direct processing of '-other' fields, they are processed with their main question.
+                continue;  
             }
             if (is_array($answer)) {
-                $answer = implode(',', $answer); // Handle array answers for checkboxes
+                $answer = implode(',', $answer);
             }
             $otherKey = $questionId . '-other';
             if (!empty($data['responses'][$otherKey])) {
                 $answer = trim($answer . ', ' . $data['responses'][$otherKey], ', ');
             }
-            // Log the type and value of questionId
             error_log("Question ID Type: " . gettype($questionId) . " - Value: " . $questionId);
             error_log("Answer Type: " . gettype($answer) . " - Value: " . $answer);
         
@@ -57,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ]);
             } catch (PDOException $e) {
                 error_log("Error inserting data: " . $e->getMessage());
-                throw $e; // Re-throw to handle it in the outer catch block
+                throw $e;
             }
         }
         

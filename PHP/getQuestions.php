@@ -3,19 +3,18 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: http://localhost:3000'); // Allow requests from your React app
-header('Access-Control-Allow-Headers: Content-Type'); // Needed for POST requests
+header('Access-Control-Allow-Origin: http://localhost:3000'); 
+header('Access-Control-Allow-Headers: Content-Type');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 
-// Example data structure for questions
 $questions = [
     [
         "id" => 1,
         "text" => "My Headaches started approximately about {{input}} weeks/ months/ years ago.",
-        "type" => "embedded", // Indicating this is a text with input
-        "inputType" => "number", // Specify the type of input (text, number, etc.)
-        "min" => "0", // Minimum value
-        //"defaultValue" => "0" // Default value to ensure the form starts controlled
+        "type" => "embedded",
+        "inputType" => "number",
+        "min" => "0",
+        //"defaultValue" => "0"
     ],
     ["id" => 2,
      "text" => "My Headaches started after a head trauma/ concussion /neck trauma / illness/infection?", 
@@ -127,18 +126,18 @@ $questions = [
     [
         "id" => 11,
         "text" => "On Average {{input}} days per month, my headache prevents me from doing my routine daily activities..",
-        "type" => "embedded", // Indicating this is a text with input
-        "inputType" => "number", // Specify the type of input (text, number, etc.)
-        "min" => "0", // Minimum value
-        //"defaultValue" => "0" // Default value to ensure the form starts controlled
+        "type" => "embedded",
+        "inputType" => "number",
+        "min" => "0",
+        //"defaultValue" => "0"
     ],
     [
         "id" => 12,
         "text" => "Intensity of my headache in the scale of 1 to 10, in average is {{input}} and maximum is {{input}}",
-        "type" => "embedded", // Indicating this is a text with input
-        "inputType" => "number", // Specify the type of input (text, number, etc.)
-        "min" => "1", // Minimum value
-        //"defaultValue" => "1" // Default value to ensure the form starts controlled
+        "type" => "embedded",
+        "inputType" => "number",
+        "min" => "1",
+        //"defaultValue" => "1"
     ],
     [
         "id" => 13,
@@ -184,9 +183,9 @@ $questions = [
     [
         "id" => 15,
         "text" => "Currently what are you taking /using for your headache? (Including over the counter medication)",
-        "type" => "textbox", // Indicating this is a text with input
-        "inputType" => "text", // Specify the type of input (text, number, etc.)
-        //"defaultValue" => "" // Default value to ensure the form starts controlled
+        "type" => "textbox",
+        "inputType" => "text",
+        //"defaultValue" => ""
     ],
     [
         "id" => 16,

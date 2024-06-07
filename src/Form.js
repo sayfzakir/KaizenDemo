@@ -113,7 +113,6 @@ function Form() {
         });
     };
     
-
     const handleEmbeddedChange = (event, questionId, idx) => {
         const { value } = event.target;
         setResponses(prev => {
@@ -128,14 +127,13 @@ function Form() {
         console.log('Form Data:', formData);
         console.log('Responses:', responses);
     
-        // Assuming your server endpoint is set to receive the form data at this URL
         const submitUrl = 'http://localhost:8000/form.php';
     
         fetch(submitUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'  // Ensure the server knows that client expects JSON
+                'Accept': 'application/json'
             },
             body: JSON.stringify({responses})
         })
@@ -152,12 +150,10 @@ function Form() {
         })
         .catch(error => {
             console.error('Submission Error:', error);
-            // Handle errors here, such as displaying a notification to the user
         });
     };
     
-    // Optionally, a reset form function to clear the form after successful submission
-    const resetForm = () => {
+        const resetForm = () => {
         const resetResponses = {};
         questions.forEach(question => {
             if (question.type === 'checkbox') {
