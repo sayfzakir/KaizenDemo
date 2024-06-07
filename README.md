@@ -2,6 +2,26 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The client side code first calls the server to get the list of form questions, their corresponding options/choices (if any) as well as any other details about the form questions. The form is then dynamically rendered based on the question type. Once the user clicks on submit, all the answers along with the user id are written to the Database.
+
+## Database structure
+
+For the current form, the relevent tables are, Questions, Options and Answers.
+
+Questions
+| Question ID | Question Text | Question Type |
+|-------------|---------------|---------------|
+
+Options
+| Question ID | Option Text   |
+|-------------|---------------|
+
+Answers
+| User ID     | Question ID   | Answer Text   |
+|-------------|---------------|---------------|
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
