@@ -1,0 +1,70 @@
+Array
+(
+    [responses] => Array
+        (
+            [1] => 0
+            [2] => 
+            [3] => 
+            [4] => 
+            [5] => Array
+                (
+                )
+
+            [6] => Array
+                (
+                )
+
+            [7] => Array
+                (
+                )
+
+            [8] => Array
+                (
+                )
+
+            [9] => 
+            [10] => 
+            [11] => 0
+            [12] => 1
+            [13] => Array
+                (
+                )
+
+            [14] => Array
+                (
+                )
+
+            [15] => 
+            [16] => Array
+                (
+                )
+
+            [17] => Array
+                (
+                )
+
+            [16-other] => 
+            [17-other] => 
+            [1-1] => 1
+        )
+
+)
+Preparing to insert: 1 with 0
+Preparing to insert: 2 with 
+Preparing to insert: 3 with 
+Preparing to insert: 4 with 
+Preparing to insert: 5 with 
+Preparing to insert: 6 with 
+Preparing to insert: 7 with 
+Preparing to insert: 8 with 
+Preparing to insert: 9 with 
+Preparing to insert: 10 with 
+Preparing to insert: 11 with 0
+Preparing to insert: 12 with 1
+Preparing to insert: 13 with 
+Preparing to insert: 14 with 
+Preparing to insert: 15 with 
+Preparing to insert: 16 with 
+Preparing to insert: 17 with 
+Preparing to insert: 16-other with 
+Error: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'question_id' at row 1

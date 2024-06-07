@@ -1,0 +1,21 @@
+.sidebar {
+    width: 40%; /* Adjust this value to set the sidebar width */
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-link {
+    padding: 20px;
+    font-size: 12px;
+}
+
+.sidebar-image{
+    padding-top: 100px;
+    width: 100%; 
+    height: 40px;
+}
