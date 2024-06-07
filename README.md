@@ -20,6 +20,9 @@ Answers
 | User ID     | Question ID   | Answer Text   |
 |-------------|---------------|---------------|
 
+![alt text](image.png)
+
+![alt text](image-1.png)
 
 
 ## Available Scripts

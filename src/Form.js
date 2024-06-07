@@ -280,7 +280,7 @@ function Form() {
             <Sidebar />
             <div className="content-area">
                 <div className="Title">
-                    <h2 style={{ color: '#025877' }}>Headache Questionare</h2>
+                    <h2>Headache Questionnaire</h2>
                 </div>
                 <div className="main-content">
                     <div className="static-fields">
