@@ -124,7 +124,13 @@ function Form() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Form Data:', formData);
+        
+        const encodedName = btoa(formData.name);
+        const encodedDateOfBirth = btoa(formData.dateOfBirth);
+        const encodedReferringPhysician = btoa(formData.referringphysician);
+        const signatureImage = canvasRef.current.toDataURL('image/png'); // Encode signature as base64
+    
+        console.log('Encoded Form Data:', {encodedName, encodedDateOfBirth, encodedReferringPhysician});
         console.log('Responses:', responses);
     
         const submitUrl = 'http://localhost:8000/form.php';
@@ -135,7 +141,13 @@ function Form() {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({responses})
+            body: JSON.stringify({
+                name: encodedName,
+                dateOfBirth: encodedDateOfBirth,
+                referringPhysician: encodedReferringPhysician,
+                responses: responses,
+                signature: signatureImage
+            })
         })
         .then(response => {
             if (!response.ok) {
@@ -240,8 +252,7 @@ function Form() {
                 const parts = question.text.split("{{input}}");
                 return(
                     <div key={question.id} className="question-container">
-                        <p>{index + 1}.
-                            {parts.map((part, idx) => (
+                        <p>{index + 1}. {parts.map((part, idx) => (
                                 <React.Fragment key={idx}>
                                     {part}
                             {idx < parts.length - 1 && (  // Change condition to add input after the part except for the last part
